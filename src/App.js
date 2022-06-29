@@ -5,7 +5,7 @@ import { Route, Routes,BrowserRouter as Router} from 'react-router-dom'
 import Search from './components/search';
 import LoadingBar from 'react-top-loading-bar';
 import Page404 from './components/page404';
-import NoResults from './components/noresults';
+
 
 export default class App extends Component{
   apiKey = process.env.REACT_APP_NEWS_API;
