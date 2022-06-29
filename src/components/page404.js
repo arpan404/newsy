@@ -1,11 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Page404Image from './assets/page404.svg'
-export default class Page404 extends Component {
-    hi =()=>
-    {
-        console.log("hi");
-    }
-  render() {
+export default function Page404 () {
     return (
      <>
      
@@ -14,5 +9,5 @@ export default class Page404 extends Component {
      </div>
      </>
     )
-  }
+  
 }
