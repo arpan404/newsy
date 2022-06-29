@@ -4,12 +4,13 @@ export default function NewsCard(props) {
   return (
     <div className="card" style={{ width: "18rem", margin: "30px" }}>
       <img
-        alt="news"
+        alt="News"
         src={
           !props.imgSrc
             ? "https://media.istockphoto.com/vectors/breaking-news-vector-illustration-poster-banner-logo-badge-on-white-vector-id891605714?k=20&m=891605714&s=612x612&w=0&h=8cJMJnLE-Lam14zA4ozetp5uSyWsnPguil7PvwVgRRE="
             : props.imgSrc
         }
+        
         className="card-img-top"
         style={{
           maxHeight: "150px",
