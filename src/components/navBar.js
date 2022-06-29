@@ -1,20 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export default class NavBar extends Component {
+export default function NavBar() {
 
-  constructor(){
-    super();
-    this.state ={
-      searchLink: ""
-    }
-  }
-  handleOnChange = (event) => {
-    this.setState({
-      searchLink: "/search/"+ event.target.value
-    })
-  };
-  render() {
+  // constructor(){
+  //   super();
+  //   this.state ={
+  //     searchLink: ""
+  //   }
+  // }
+  // handleOnChange = (event) => {
+  //   this.setState({
+  //     searchLink: "/search/"+ event.target.value
+  //   })
+  // };
+
     return (
       <>
         <nav className="navbar navbar-expand-lg bg-light">
@@ -110,4 +110,4 @@ export default class NavBar extends Component {
       </>
     );
   }
-}
+
