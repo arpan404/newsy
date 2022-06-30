@@ -25,7 +25,7 @@ export default function App(){
       <NavBar/>
       <Routes>
         <Route exact strict path = "/" element ={<News setProgress = {setProgress} apiKey= {apiKey} key = "home" type = "home"/>} />
-        {/* <Route exact path="/search/" element={<Search setProgress = {setProgress} apiKey= {apiKey} key = "search"/>}/> */}
+        <Route exact path="/search" element={<Search setProgress = {setProgress} apiKey= {apiKey} key = "search"/>}/>
         <Route exact strict path = "business" element ={<News setProgress = {setProgress} apiKey= {apiKey} key ="business" category ="business"/>} />
         <Route exact strict path = "entertainment" element ={<News setProgress = {setProgress} apiKey= {apiKey} key ="entertainment" category ="entertainment"/>} />
         <Route exact strict path = "general" element ={<News setProgress = {setProgress} apiKey= {apiKey} key ="general" category ="general"/>} />
