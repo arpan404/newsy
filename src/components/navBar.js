@@ -1,20 +1,14 @@
-import React from "react";
+import React , {useState} from "react";
 import { Link } from "react-router-dom";
+
 
 export default function NavBar() {
 
-  // constructor(){
-  //   super();
-  //   this.state ={
-  //     searchLink: ""
-  //   }
-  // }
-  // handleOnChange = (event) => {
-  //   this.setState({
-  //     searchLink: "/search/"+ event.target.value
-  //   })
-  // };
 
+  const[searchLink, setSearch] = useState("");
+const handleOnChange =(event) =>{
+  setSearch("/search/"+ event.target.value);
+}
     return (
       <>
         <nav className="navbar navbar-expand-lg bg-light">
@@ -102,10 +96,10 @@ export default function NavBar() {
               </ul>
             </div>
           </div>
-          {/* <span className="d-flex my-2 mx-2">
-        <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" onChange={this.handleOnChange}/>
-        <Link to= {this.state.searchLink} state={{query: 'tesla'}}><button className="btn btn-outline-danger" type="button">Search</button></Link>
-      </span> */}
+          <span className="d-flex my-2 mx-2">
+        <input className="form-control me-3" type="search" placeholder="Search" aria-label="Search" onChange={handleOnChange}/>
+        <Link to= {searchLink}><button className="btn btn-outline-danger" type="button">Search</button></Link>
+      </span>
         </nav>
       </>
     );
