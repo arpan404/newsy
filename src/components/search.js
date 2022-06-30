@@ -3,25 +3,27 @@ import NewsCard from "./newsCard";
 import "./news.css";
 import Spinner from "./spinner";
 import { useEffect } from "react";
+import { useParams } from "react-router";
 
 export default function Search(props) {
+  let params = useParams();
+  let q = params.query;
+
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [totalResults, setResults] = useState(0);
   const loadNews = async () => {
     props.setProgress(10);
     setLoading(true);
-    let url = `https://newsapi.org/v2/everything?q=${props.query}&sortBy=publishedAt&apiKey=${props.apiKey}`;
+    let url = `https://newsapi.org/v2/everything?q=${q}&sortBy=publishedAt&apiKey=${props.apiKey}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     setLoading(false);
     setArticles(parsedData.articles);
-    setResults(parsedData.totalResults);
     props.setProgress(100);
   };
   useEffect(() => {
     loadNews();
-  }, []);
+  }, [q]);
 
   return (
     <>

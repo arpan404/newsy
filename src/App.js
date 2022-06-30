@@ -33,7 +33,7 @@ export default function App(){
         <Route exact strict path = "science" element ={<News setProgress = {setProgress} apiKey= {apiKey} key ="science" category ="science"/>} />
         <Route exact strict path = "sport" element ={<News setProgress = {setProgress} apiKey= {apiKey} key ="sport" category ="sport"/>} />
         <Route exact strict path = "technology" element ={<News setProgress = {setProgress} apiKey= {apiKey} key ="technology" category ="technology"/>} />
-        {/* <Route exact strict path="/search/:query" element={<Search setProgress = {setProgress} apiKey= {apiKey} key= "search"/>}/> */}
+        <Route exact strict path="/search/:query" element={<Search setProgress = {setProgress} apiKey= {apiKey} key= "search"/>}/>
 
         <Route path="*" element={<Page404/>} />
       </Routes>
