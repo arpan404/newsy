@@ -34,7 +34,7 @@ export default function Search(props) {
         <small style={{ color: "grey" }}>Newsy &#62; Search</small>
       </div>
       {loading === true && <Spinner />}
-{totalResults === 0? <NoResults query = {q}/>:
+{totalResults === 0 && loading === false? <NoResults query = {q}/>:
       <div className="row">
         {articles.map((element) => {
           return (
