@@ -1,11 +1,11 @@
 import React from "react";
 import NoResultImage from "./assets/noresults.svg";
-export default function NoResults() {
+export default function NoResults(props) {
   return (
     <div className="text-center my-3">
       <h3 style={{ color: "#545454" }}>
         No Results Found{" "}
-        {this.props.query ? "for '" + this.props.query + "'" : ""}
+        {props.query ? "for '" + props.query + "'" : ""}
       </h3>
       <img
         src={NoResultImage}

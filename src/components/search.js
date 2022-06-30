@@ -4,6 +4,7 @@ import "./news.css";
 import Spinner from "./spinner";
 import { useEffect } from "react";
 import { useParams } from "react-router";
+import NoResults from "./noresults";
 
 export default function Search(props) {
   let params = useParams();
@@ -11,6 +12,7 @@ export default function Search(props) {
 
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [totalResults, setResults] = useState(0);
   const loadNews = async () => {
     props.setProgress(10);
     setLoading(true);
@@ -19,6 +21,7 @@ export default function Search(props) {
     let parsedData = await data.json();
     setLoading(false);
     setArticles(parsedData.articles);
+    setResults(parsedData.totalResults);
     props.setProgress(100);
   };
   useEffect(() => {
@@ -31,7 +34,7 @@ export default function Search(props) {
         <small style={{ color: "grey" }}>Newsy &#62; Search</small>
       </div>
       {loading === true && <Spinner />}
-
+{totalResults === 0? <NoResults query = {q}/>:
       <div className="row">
         {articles.map((element) => {
           return (
@@ -55,7 +58,9 @@ export default function Search(props) {
           );
         })}
       </div>
+}
     </>
+
   );
 }
 Search.defaultProps = {

@@ -8,7 +8,7 @@ export default function NavBar(props) {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-light">
+      <nav className="navbar sticky-top navbar-expand-lg bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Newsy
